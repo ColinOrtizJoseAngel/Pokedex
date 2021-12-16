@@ -1,0 +1,239 @@
+/*# Estoy usando Sass para apoyar con el diseño responsibo de la pagina */
+
+nav {
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.Capsule{
+
+        border-radius: 20%/50%;
+        text-transform: uppercase;
+        font-weight: bolder;
+        width: 5em;
+        height: 2em;
+        margin: 1em auto;
+        background-color: green;
+        color: white;   
+    
+}
+
+.PokeLogo {
+    width: 75px;
+}
+
+.PokeImage{
+    text-align: center;
+  font-family: cursive;
+  font-size: 24px;
+  border: 10px solid black;
+  padding: 2rem 1rem;
+  min-height: 3em;
+  width: 40%;
+  resize: both;
+  background: linear-gradient(to top, rgba(#8b0000 , 0.3), rgba(#f9f7d9, 0.3), rgba(#fce2ce, 0.3), rgba(#8b0000 , 0.3));
+  border-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='100' height='100' viewBox='0 0 100 100' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3ClinearGradient id='g' x1='0%25' y1='0%25' x2='0%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23cffffe' /%3E%3Cstop offset='25%25' stop-color='%23f9f7d9' /%3E%3Cstop offset='50%25' stop-color='%23fce2ce' /%3E%3Cstop offset='100%25' stop-color='%23ffc1f3' /%3E%3C/linearGradient%3E %3Cpath d='M1.5 1.5 l97 0l0 97l-97 0 l0 -97' stroke-linecap='square' stroke='url(%23g)' stroke-width='3'/%3E %3C/svg%3E") 1;
+}
+
+.App {
+    font-family: sans-serif;
+    text-align: center;
+}
+
+/*# Boton flotante */
+
+*{padding:0;margin:0;}
+
+body{
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:18px;
+	background-color:#f4f4f4;
+    
+}
+
+.PokeDex{
+    border: red 5px solid;
+    bottom:50%;
+	right:100%;
+    
+}
+
+.SearchLogo {
+    
+    width: 55px;
+}
+
+.float{
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:80%;
+	right:17%;
+	background-color:red;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+	box-shadow: 2px 2px 3px #999;
+}
+
+.my-float{
+	margin-top:22px;
+}
+
+/*# Menu Hamburguesa */
+
+
+
+$color-secondary-grey: red;
+
+$color-primary-blue: red;
+$color-secondary-bluelight: #80CED7;
+$color-primary-dark: #36393B;
+
+$color-white: #fff;
+$color-black: #000;
+
+
+
+.navigation {
+  &__checkbox {
+    display: none;
+  }
+
+  &__button {
+    background-color: $color-secondary-grey;
+    width:60px;
+	height:60px;
+    position: fixed;
+    bottom:80%;
+	right:71%;
+    border-radius: 50%;
+    z-index: 2000;
+    box-shadow: 0 1rem 3rem rgba($color-black, .1);
+    text-align: center;
+    cursor: pointer;
+  }
+
+  &__background {
+    width:60px;
+	height:60px;
+    border-radius: 50%;
+    position: fixed;
+    bottom:80%;
+	right:71%;
+    background-image: radial-gradient($color-primary-blue, $color-secondary-bluelight);
+    z-index: 1000;
+    transition: transform .8s cubic-bezier(0.86, 0, 0.07, 1);
+  }
+
+
+  &__nav {
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1500;
+
+    opacity: 0;
+    width: 0;
+    transition: all .8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+    &__list {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    list-style: none;
+    text-align: center;
+    width: 100%;
+  }
+
+  &__item {
+    margin: 1rem;
+  }
+
+  &__link {
+    &:link,
+    &:visited {
+      display: inline-block;
+      font-size: 3rem;
+      font-weight: 300;
+      padding: 1rem 2rem;
+      color: $color-white;
+      text-decoration: none;
+      text-transform: uppercase;
+      background-image: linear-gradient(120deg, transparent 0%, transparent 50%, $color-white 50%);
+      background-size: 220%;
+      transition: all .4s;
+
+      }
+
+      &:hover,
+      &:active {
+        background-position: 100%;
+        color: $color-primary-blue;
+        transform: translateX(1rem);
+      }
+  }
+
+ 
+  &__checkbox:checked ~ &__background {
+    transform: scale(80);
+  }
+
+  &__checkbox:checked ~ &__nav {
+    opacity: 1;
+    width: 100%;
+  }
+
+  &__icon {
+    position: relative;
+    margin-top: 1.8rem;
+
+    &,
+    &::before,
+    &::after {
+        width: 2rem;
+        height: 4px;
+        background-color: $color-primary-dark;
+        display: inline-block;
+    }
+
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        transition: all .2s;
+    }
+
+    &::before { top: -.8rem; }
+    &::after { top: .8rem; }
+  }
+
+  &__button:hover &__icon::before {
+      top: -1rem;
+    }
+
+  &__button:hover &__icon::after {
+      top: 1rem;
+    }
+
+  &__checkbox:checked + &__button &__icon {
+      background-color: transparent;
+    }
+
+  &__checkbox:checked + &__button &__icon::before {
+      top: 0;
+      transform: rotate(135deg);
+    }
+
+  &__checkbox:checked + &__button &__icon::after {
+      top: 0;
+      transform: rotate(-135deg);
+  }
+}
