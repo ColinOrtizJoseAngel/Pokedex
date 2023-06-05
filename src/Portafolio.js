@@ -140,15 +140,15 @@ const Portafolio = () => {
 )}
             </div>
             <div className="project">
-              <h3></h3>
+              
               <p>Es  un proyecto que me ah llevado a aprender mucho de programación como C# asi como modelaje y diseño 3d.</p>
               <button className="project-button" onClick={handleShowCarousel}> Ver más
         </button>
             </div>
             <div className="project">
-              <h3></h3>
-              <img src="https://scontent.fmex16-1.fna.fbcdn.net/v/t1.6435-9/130922687_2798655787056331_5767171242969436521_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=730e14&_nc_ohc=MN8j9AewnscAX_R_-03&_nc_ht=scontent.fmex16-1.fna&oh=00_AfDMeSszPMMfY1rj55yD-Ae1jE_YMVV5XgavoFLQGTmr8w&oe=64A5B69F" class="half-size" />
-              <img src="https://scontent.fmex16-2.fna.fbcdn.net/v/t39.30808-6/351139219_218329047669189_8331348729306269390_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=730e14&_nc_ohc=n1GVADG090EAX8NGQRA&_nc_ht=scontent.fmex16-2.fna&oh=00_AfBEjx3o-jSjfMtDKyIrXvWUEj0Y372VWm1c06fN3Egpwg&oe=648246FF" class="half-size" />
+              
+              <img src="https://scontent.fmex16-1.fna.fbcdn.net/v/t1.6435-9/130922687_2798655787056331_5767171242969436521_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=730e14&_nc_ohc=MN8j9AewnscAX_R_-03&_nc_ht=scontent.fmex16-1.fna&oh=00_AfDMeSszPMMfY1rj55yD-Ae1jE_YMVV5XgavoFLQGTmr8w&oe=64A5B69F" class="half-sizes" alt='Hola'/>
+              <img src="https://scontent.fmex16-2.fna.fbcdn.net/v/t39.30808-6/351139219_218329047669189_8331348729306269390_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=730e14&_nc_ohc=n1GVADG090EAX8NGQRA&_nc_ht=scontent.fmex16-2.fna&oh=00_AfBEjx3o-jSjfMtDKyIrXvWUEj0Y372VWm1c06fN3Egpwg&oe=648246FF" class="half-sizes" alt='Hola'/>
             </div>
           </div>
         </section>

@@ -295,12 +295,13 @@
 .half-size {
   width: 100%;
   height: auto;
-  border-radius: 50%;
+  
 }
 
 .half-sizes {
-  width: 50%;
+  width: 100%;
   height: auto;
+  border-radius: 50%;
 }
 
   @media screen and (max-width: 600px) {
