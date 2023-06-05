@@ -6,29 +6,16 @@ import Burguernav from './BurguerNav';
 import AppContainer from './AppRedux';
 import { activateGeod, closeGeod } from './redux';
 
+import Portafolio from './Portafolio';
 
-
-import {createStore} from 'redux';
-
-function App() {
+const App = () => {
   return (
-    <div className="PokeDex">
-      <Navbar/>
-    <div className="App">
-      <h1>Pokedex</h1>
-      <Searchbar/>
+    <div className="app">
+      <Portafolio />
       <Burguernav/>
-      <button id="incrementar">Incrementar</button>
-<button id="decrementar">Decrementar</button>
-<div id="state"></div>
-      
-    
-       
-    </div>
-
     </div>
   );
 }
 
-
 export default App;
+

@@ -85,12 +85,12 @@ body {
   display: none;
 }
 .navigation__button {
-  background-color: red;
+  background-color: 3366CC;
   width: 60px;
   height: 60px;
   position: fixed;
   bottom: 80%;
-  right: 71%;
+  right: 25%;
   border-radius: 50%;
   z-index: 2000;
   box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
@@ -103,8 +103,8 @@ body {
   border-radius: 50%;
   position: fixed;
   bottom: 80%;
-  right: 71%;
-  background-image: radial-gradient(red, #80CED7);
+  right: 25%;
+  background-image: radial-gradient(#3366CC, #80CED7);
   z-index: 1000;
   transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1);
 }
@@ -193,5 +193,67 @@ body {
   top: 0;
   transform: rotate(-135deg);
 }
+
+.pokedex {
+  background-color: #f8f8f8;
+  border: 2px solid #d4d4d4;
+  border-radius: 10px;
+  padding: 20px;
+  width: 300px;
+  margin: 0 auto;
+}
+
+.pokedex-screen {
+  background-color: #ececec;
+  border: 2px solid #d4d4d4;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.pokemon-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.pokemon-image img {
+  width: 120px;
+  height: 120px;
+}
+
+.pokemon-details {
+  margin-top: 10px;
+}
+
+.search-bar form {
+  display: flex;
+  align-items: center;
+}
+
+.search-bar input[type="text"] {
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+}
+
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: #4a90e2;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #3d7cc7;
+} 
 
 /*# sourceMappingURL=App.css.map */

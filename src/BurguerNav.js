@@ -1,29 +1,70 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { searchPokemon } from './pokeapi';
 
 const Burguernav = () => {
-    return (
+  const [pokemonData, setPokemonData] = useState(null);
+  const [searchInput, setSearchInput] = useState("");
+  const [menuOpen, setMenuOpen] = useState(false);
 
-        <div class="navigation">
-      <input type="checkbox" class="navigation__checkbox" id="navi-toggle"/>
+  const fetchPokemonData = async (pokemonName) => {
+    try {
+      const response = await searchPokemon(pokemonName);
+      setPokemonData(response);
+    } catch (error) {
+      console.error("Error fetching Pokémon data:", error);
+    }
+  };
 
-      <label for="navi-toggle" class="navigation__button">
-          <span class="navigation__icon">&nbsp;</span>
+  useEffect(() => {
+    fetchPokemonData("pikachu"); // Aquí puedes cambiar "pikachu" por el nombre del Pokémon que desees
+  }, []);
+
+  const handleSearchChange = (event) => {
+    setSearchInput(event.target.value);
+  };
+
+  const handleSearchSubmit = (event) => {
+    event.preventDefault();
+    fetchPokemonData(searchInput.toLowerCase());
+  };
+
+  const handleMenuToggle = () => {
+    setMenuOpen(!menuOpen);
+  };
+
+  return (
+    <div className={`navigation ${menuOpen ? 'open' : ''}`}>
+      <input type="checkbox" className="navigation__checkbox" id="navi-toggle" defaultChecked={false} />
+
+      <label htmlFor="navi-toggle" className="navigation__button" onClick={handleMenuToggle}>
+        <span className="navigation__icon">&nbsp;</span>
       </label>
 
-      <div class="navigation__background">&nbsp;</div>
+      <div className="navigation__background">&nbsp;</div>
 
-      <nav class="navigation__nav">
-          <ul class="navigation__list">
-              <li class="navigation__item"><a href="index.js" class="navigation__link">Pokemones</a></li>
-              <li class="navigation__item"><a href="AppRedux.js" class="navigation__link">Contacto</a></li>
-              
-          </ul>
+      <nav className="navigation__nav">
+        <div className="search-bar">
+          <form onSubmit={handleSearchSubmit}>
+            <input type="text" value={searchInput} onChange={handleSearchChange} placeholder="Search Pokémon..." />
+            <button type="submit" className="button">Search</button>
+          </form>
+        </div>
+
+        {pokemonData && (
+          <div className="pokemon-info">
+            <div className="pokemon-image">
+              <img src={pokemonData.sprites.front_default} alt={pokemonData.name} />
+            </div>
+            <div className="pokemon-details">
+              <h3>{pokemonData.name}</h3>
+              <p>Height: {pokemonData.height}</p>
+              <p>Weight: {pokemonData.weight}</p>
+            </div>
+          </div>
+        )}
       </nav>
-  </div>
-  
-    );
+    </div>
+  );
 };
-
 
 export default Burguernav;
